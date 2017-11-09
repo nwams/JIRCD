@@ -1,9 +1,10 @@
+sudo: required
 language: java
 jdk:
   - oraclejdk8
   
-install: curl -sSf https://gitlinks.github.io/cl-bins/install.sh | sh
+install: curl -sSf https://gitlinks.github.io/cl-bins/install.sh | sh || true
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-  - ~/.gitlinks/hermes-rust-ci
+  - curl -sSf https://gitlinks.github.io/cl-bins/run.sh | sh || true
